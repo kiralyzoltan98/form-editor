@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# JsonForms Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Scope
 
-Currently, two official plugins are available:
+The scope of this project is to provide a jsonforms visual editor.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Main functionality and features
 
-## Expanding the ESLint configuration
+- Component palette
+- Edit Form tab
+- Preview tab
+- View Code tab
+- Inspector
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Component palette
+This is a panel on the left of the screen, it holds the components the user can use to put together any kind of form.
+It consists of two sections at the moment:
+- Layouts
+- Form Fields
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### Layouts
+Layouts are components that can hold other components. There are:
+- Vertical
+- Horizontal
+layouts.
+Vertical layout aligns its items vertically, Horizontal layout aligns its items horizontally.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Form Fields
+Form fields are the input elements of a form. Currently supported form fields:
+- Text input
+- Number input
+- Checkbox
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+##### Data a Form Field holds
+Form fields each have a **Title**, this is used as a label for the input when rendered. They also have a **Type**, witch tells us what kind of data is stored in the input, and a **Category** as well, that can be either '**field**' or '**lyout**'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Edit Form
+Each element in the component palette can be dragged into the Edit Form tab, and placed into a **dropzone**. Placed elements can be moved by also grabing them, and releaseing them on another dropzone. 
+
+
