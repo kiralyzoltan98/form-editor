@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+This project's main goal is to create a drag and drop (dnd) form editor that is based on json forms library. Its composed of a component palette on the left, with different layouts, and form fields the user can drop into the canvas. The canvas can be switched between Edit Form, Preview, and View Code tabs. On the Edit From tab the user can put together their form that in the background modifies the three core json files of json forms: data.json, schema.json and uischema.json. From these the Preview tab uses a <JsonForms> component to render the form. At the View Code the user can inspect the raw json files itself. This form editor should be able to fully support all nested layouts that json forms can handle. It should also be able to handle multiple forms as well.
